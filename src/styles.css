@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+box-sizing: border-box;
+}
+
+body {
+background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
+min-height: 100vh;
+font-family: 'Lato', sans-serif;
+margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#root{
+padding: 0 20px;
+width: 100%;
+}
+.timeline-container{
+display: flex;
+flex-direction: column;
+position: relative;
+margin: 40px 0;
+}
+
+.timeline-container::after{
+background-color: #e17b77;
+content: '';
+position: absolute;
+left: calc(50% - 2px);
+width: 4px;
+height: 100%;
+}
+
+.timeline-item{
+  background-color: purple;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  margin: 10px 0;
+  width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+align-self: flex-end;
+justify-content: flex-start;
+padding-right: 0px;
+padding-left: 30px;
+}
+
+.timeline-item-content{
+background-color: orangered;
+border-radius: 5px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+max-width: 70%;
+display: flex;
+position: relative;
+flex-direction: column;
+align-items: flex-end;
+max-width: 70%;
+width: 400px;
+text-align: right;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content{
+  align-items: flex-start;
+  text-align: left;
+}
+.timeline-item:nth-child(odd) .timeline-item-content:after{
+  right: auto;
+  left: -7.5px;
+  box-shadow: 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item-content::after {
+  content: '';
+  right: -7.5px;
+  box-shadow: 1px -1px rgba(0, 0, 0, 0.2);
+  top: calc(50% - 7.5%);
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  transform: rotate(45deg);
+
+
+}
